@@ -3,12 +3,12 @@ agent any
   stages {
     stage('Back-end') {
       steps {
-        sh 'mvn --version'
+        sh 'docker --version'
       }
     }
     stage('Front-end') {
     steps {
-        sh 'node --version'
+        sh 'git --version'
       }
     }
   }

@@ -2,21 +2,12 @@ pipeline {
 agent any
   stages {
     stage('Back-end') {
-      FROM maven:3.8.1-openjdk-11-slim AS builder
-      WORKDIR /app
-      COPY pom.xml .
-       RUN mvn -e -B dependency:resolve
-       COPY src ./src
-       RUN mvn clean -e -B package
       steps {
         sh 'mvn --version'
       }
     }
     stage('Front-end') {
-      agent {
-        docker { image 'node:16-alpine' }
-      }
-      steps {
+    steps {
         sh 'node --version'
       }
     }

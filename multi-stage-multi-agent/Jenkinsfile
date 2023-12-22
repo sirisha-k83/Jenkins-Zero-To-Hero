@@ -6,7 +6,7 @@ agent any
         docker { image 'maven:3.8.1-adoptopenjdk-11' }
       }
       steps {
-        sh 'maven --version'
+        sh 'mvn --version'
       }
     }
     stage('Front-end') {
